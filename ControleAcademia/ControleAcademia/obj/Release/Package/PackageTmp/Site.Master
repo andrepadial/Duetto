@@ -1,0 +1,84 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="ControleAcademia.SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html lang="pt-br">
+    <head runat="server">
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Agendamentos - Duetto</title>
+
+        <asp:PlaceHolder runat="server">
+            <%: Scripts.Render("~/bundles/modernizr") %>
+        </asp:PlaceHolder>
+
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cormorant" />
+        <link href="Content/mcmenu.css" rel="stylesheet" />
+        <script src="Scripts/mcmenu.js" type="text/javascript"></script>
+        <script src="Scripts/jquery-3.4.1.min.js" type="text/javascript"></script>
+        <script src="Scripts/modernizr-2.8.3.js" type="text/javascript"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <style>
+            body {
+                margin:0;
+                background:transparent;
+            }
+            #menuDuetto { text-align:center; padding:30px 8px; }
+        </style>
+
+    </head>
+    <body>
+        <form runat="server">
+            <div id="menuDuetto">
+                <div class="menu-icon-wrapper">
+	                <div class="menu-icon" data-menu="mcmenu">
+		                <div class="three-line">
+			                <span></span>
+			                <span></span>
+			                <span></span>
+		                </div>
+	                </div>
+                </div>
+                <div id="mcmenu">
+                    <ul>
+                        <li><a href="Default.aspx">Home</a></li>
+                        <li>
+                            <span>Agendamentos<i class="arrow"></i></span>
+                            <ul class="dropdown">				                
+                                <li>
+                                    <span>&Aacute;reas<i class="arrow"></i></span>
+                                    <ul class="dropdown">
+                                        <li><a href="ControleAcademia.aspx">Academia</a></li>
+                                        <li><a href="#">Churrasqueira</a></li>                                        
+                                    </ul>
+                                </li>                                
+                            </ul>
+                        </li>
+                        <li>
+                            <span>Relat&oacute;rios<i class="arrow"></i></span>
+                            <ul class="dropdown">				                
+                                <li>
+                                    <span>Controle de Hor&aacute;rios<i class="arrow"></i></span>
+                                    <ul class="dropdown">
+                                        <li><a href="#">Academia</a></li>
+                                        <li><a href="#">Churrasqueira</a></li>                                        
+                                    </ul>
+                                </li>                                
+                            </ul>
+                        </li>
+                        <li><a href="Contato.aspx">Contato</a></li>                        
+                    </ul>
+                </div>
+            </div>
+            <div class="container body-content">
+                <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                </asp:ContentPlaceHolder>
+                <hr />
+                <footer>
+                    <p>&copy; <%: DateTime.Now.Year %> - Duetto</p>
+                </footer>
+            </div>
+        </form>
+    </body>
+</html>
